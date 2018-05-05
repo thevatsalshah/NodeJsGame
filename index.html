@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title> Real time multi-player games with HTML5</title>
+
+			<!-- Load style sheet -->
+		<link href="index.css" media="screen" rel="stylesheet" type="text/css">
+
+	<!-- Library code -->
+		
+		 	<!-- Load socket.io client side contents. -->
+		<script src="/socket.io/socket.io.js"></script>
+
+
+	 		<!-- Load the GUI rendering library code. -->
+		<script type="text/javascript" src="lib/dat.gui.min.js"></script>
+			<!-- Load the keyboard specific code --> 
+		<script type="text/javascript" src="lib/keyboard.js"></script>
+	 	
+
+
+
+	</head>
+
+	<body>
+		<form method="POST">
+		 <input type="button" name="player" value="Player" onclick="javascript:CreatePlayerRequest();">
+		 <input type="button" name="enemy" value="Enemy">
+		</form>
+		<canvas   id="viewport">
+
+		</canvas>
+
+		<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script> 
+
+		<script type="text/javascript">
+			function CreatePlayerRequest()
+			{
+	  			$.ajax({
+        		url : '/createplayer',
+        		type: 'POST',
+        		success : function()
+        		{
+
+        		}
+    			})
+
+	}
+	</script>
+	
+	</body>
+
+</html>
